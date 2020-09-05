@@ -14,9 +14,18 @@ var requirementSchema = new Schema({
     channelID: String,
     description: String,
     createdBy: String,
-    Fulfilled: Number,
+    //Fulfilled: Number,
     isSuggestion: Boolean
 
+})
+
+var myObj = {channelID:1,decription:'Local Fire',createdBy:'OG',isSuggestion:true}
+requirementModel.insertOne(myObj,function(err,res){
+    if(err){console.log(err)
+    }
+    else{
+        console.log('inserted!!')
+    }
 })
 
 var requirementModel = conn.model('requirementModel', requirementSchema)
@@ -27,11 +36,18 @@ function getAllRequirements(){
             if (err){
                 return reject(err)
             }else{
+                
                 resolve(docs)
             }
         })
     })
 }
+
+getAllRequirements().then((docs) =>{
+    console.log(docs)
+}).catch((err)=>{
+    console.log(err)
+})
 
 //retrieve requirememnts wrt channelID
 function getRequirememntsbyID(channelID){
