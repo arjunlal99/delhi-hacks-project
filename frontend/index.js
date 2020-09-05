@@ -13,5 +13,5 @@ app.get('/channel', (req,res) => {
 
 //listener
 var listener = app.listen(process.env.PORt || 8000, () => {
-    console.log("Frontend listening at port " listener.address().port)
+    console.log("Frontend listening at port ", listener.address().port)
 })
