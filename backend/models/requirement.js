@@ -18,9 +18,10 @@ var requirementSchema = new Schema({
     isSuggestion: Boolean
 
 })
+var requirementModel = conn.model('requirementModel', requirementSchema)
 
-var myObj = {channelID:1,decription:'Local Fire',createdBy:'OG',isSuggestion:true}
-requirementModel.insertOne(myObj,function(err,res){
+var myObj = new requirementModel({channelID:1,decription:'Local Fire',createdBy:'OG',isSuggestion:true})
+myObj.save(function(err,res){
     if(err){console.log(err)
     }
     else{
@@ -28,7 +29,7 @@ requirementModel.insertOne(myObj,function(err,res){
     }
 })
 
-var requirementModel = conn.model('requirementModel', requirementSchema)
+
 //retieve array of all requirements
 function getAllRequirements(){
     return new Promise((resolve,reject) => {
