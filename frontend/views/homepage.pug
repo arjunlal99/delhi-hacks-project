@@ -1,4 +1,21 @@
 DOCTYPE html 
 html
     head
-        title Homepage
+        link(rel="stylesheet", href="views/signincss.css", type="text/css")
+        title EMERGENCY AID TRACKER
+    body
+        .container
+            form(.form-signin)
+            h2(.form-signin-heading) Please sign in
+            label(for="inputEmail" class="sr-only")EmailID
+            input(type="email" name="username" id="inputEmail" class="form-control" placeholder="Email address" required autofocus)
+            label(for="inputPassword" class="sr-only")Password
+            input(type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required)
+            - var divClasses=['checkbox', 'mb-3'];
+            div(class=divClasses)
+                label
+                    input(type="checkbox" value="remember-me")
+                    span Remember me
+            button(class="btn btn-lg btn-primary btn-block" type="submit")Sign in
+
+        
