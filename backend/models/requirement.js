@@ -21,8 +21,9 @@ var requirementSchema = new Schema({
 var requirementModel = conn.model('requirementModel', requirementSchema)
 
 //var myObj = new requirementModel({channelID:5,description:'Booty on Fire',fulfilled: '80%',createdBy:'OG',isSuggestion:true})
-function addObject(myObj){
+function addObject(channelID,description,fulfilled,createdBy,isSuggestion){
     return new Promise((resolve, reject) =>{
+        var myObj = new requirementModel({channelID:5,description:'Booty on Fire',fulfilled: '80%',createdBy:'OG',isSuggestion:isSuggestion})
         myObj.save(function(err,res){      
             if(err){
                 return reject(err)
@@ -34,12 +35,22 @@ function addObject(myObj){
     })
 }
 
-
+function getByRequirementID(id){
+    return new Promise((resolve, reject) => {
+        requirementModel.find({_id:id}, (err, docs) => {
+            if(err){
+                return reject(err)
+            }else{
+                resolve(docs)
+            }
+        })
+    })
+}
 //retieve array of all requirements
 function getAllRequirements(){
     return new Promise((resolve,reject) => {
         requirementModel.find((err, docs) => {
-            if (err){
+            if(err){
                 return reject(err)
             }else{
                 
