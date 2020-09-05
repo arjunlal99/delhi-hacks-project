@@ -25,7 +25,7 @@ var channelModel = conn.model('channels', channelSchema)
 
 function addChannel(name, description, admin, requirements){
     var channel_instance = new channelModel({
-        name: name,
+    name: name,
     description: description,
     admin: admin,
     requirements: requirements
@@ -42,7 +42,7 @@ function addChannel(name, description, admin, requirements){
 
 
 function getChannels(){
-    return new Promise((resolve,request) => {
+    return new Promise((resolve,reject) => {
         channelModel.find((err,docs) => {
             if(err){
                 return reject(err)
@@ -53,3 +53,23 @@ function getChannels(){
     })
 }
 
+function getChannelById(id){
+    return new Promise((resolve,reject) => {
+        channelModel.find({_id: id},(err,docs) => {
+            if(err){
+                return reject(err)
+            }else{
+                resolve(docs)
+            }
+        })
+    })
+}
+
+
+
+module.exports ={
+    channelSchema,
+    addChannel,
+    getChannels,
+    getChannelById
+}
