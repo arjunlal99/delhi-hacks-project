@@ -14,20 +14,25 @@ var requirementSchema = new Schema({
     channelID: String,
     description: String,
     createdBy: String,
-    //Fulfilled: Number,
+    fulfilled: String,
     isSuggestion: Boolean
 
 })
 var requirementModel = conn.model('requirementModel', requirementSchema)
 
-var myObj = new requirementModel({channelID:1,decription:'Local Fire',createdBy:'OG',isSuggestion:true})
-myObj.save(function(err,res){
-    if(err){console.log(err)
-    }
-    else{
-        console.log('inserted!!')
-    }
-})
+//var myObj = new requirementModel({channelID:5,description:'Booty on Fire',fulfilled: '80%',createdBy:'OG',isSuggestion:true})
+function addObject(myObj){
+    return new Promise((resolve, reject) =>{
+        myObj.save(function(err,res){      
+            if(err){
+                return reject(err)
+            }
+            else{
+                resolve(docs)
+            }
+        })
+    })
+}
 
 
 //retieve array of all requirements
@@ -44,11 +49,7 @@ function getAllRequirements(){
     })
 }
 
-getAllRequirements().then((docs) =>{
-    console.log(docs)
-}).catch((err)=>{
-    console.log(err)
-})
+
 
 //retrieve requirememnts wrt channelID
 function getRequirememntsbyID(channelID){
@@ -62,4 +63,17 @@ function getRequirememntsbyID(channelID){
         })
     })
 
+}
+/*getRequirememntsbyID(5).then((docs) =>{
+    console.log(docs)
+}).catch((err)=>{
+    console.log(err)
+})
+*/
+
+module.exports = {
+    addObject,
+    getAllRequirements,
+    getAllRequirements,
+    
 }
