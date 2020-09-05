@@ -8,7 +8,7 @@ var conn = mongoose.createConnection(process.env.DB_URI,{useNewUrlParser: true ,
 conn.once('open', () => {
     console.log(' Channel Connection Created Successfully')
     //addChannel('emergency','this is just a description', 'Arjun', ['f2fs','2f2f'])
-   getChannels().then(docs => console.log(docs)).catch(err => console.log(err))
+   //getChannels().then(docs => console.log(docs)).catch(err => console.log(err))
 })
 
 
