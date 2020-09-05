@@ -1,21 +1,28 @@
-DOCTYPE html 
-html
-    head
-        link(rel="stylesheet", href="views/signincss.css", type="text/css")
-        title EMERGENCY AID TRACKER
-    body
-        .container
-            form(.form-signin)
-                h2(.form-signin-heading) Please sign in
-                label(for="inputEmail" class="sr-only")EmailID
-                input(type="email" name="username" id="inputEmail" class="form-control" placeholder="Email address" required autofocus)
-                label(for="inputPassword" class="sr-only")Password
-                input(type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required)
-                - var divClasses=['checkbox', 'mb-3'];
-                div(class=divClasses)
-                    label
-                        input(type="checkbox" value="remember-me")
-                        span Remember me
-                button(class="btn btn-lg btn-primary btn-block" type="submit")Sign in
-
-        
+doctype html
+html(lang="en")
+  head
+    title Login Form In Pug
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='signincss.css')
+  body
+    #main
+     form(action="#")
+       div.label login form
+       div.username
+        input(type="text" placeholder="username")
+       div.password
+        input(type="password" placeholder="password")
+       div.checkbox
+        input(type='checkbox' name='agreement' checked)
+        |Remember me
+       button(type="button") login
+       h3 or login with
+       div.social
+        button(type="button") <i class="fa fa-facebook"></i>
+        button(type="button") <i class="fa fa-google-plus"></i>
+       p
+        | not a member
+        a(href="#") Sing Up now

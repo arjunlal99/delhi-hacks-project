@@ -1,41 +1,133 @@
+/* W3hubs.com - Download Free Responsive Website Layout Templates designed on HTML5 CSS3,Bootstrap,Tailwind CSS which are 100% Mobile friendly. w3Hubs all Layouts are responsive cross browser supported, best quality world class designs. */
+
 body {
-    padding-top: 40px;
-    padding-bottom: 40px;
-    background-color: #eee;
+ 
+    padding: 0;
+    margin: 0px;
+    font-family: 'Lato', sans-serif;
   }
   
-  .form-signin {
-    max-width: 330px;
-    padding: 15px;
-    margin: 0 auto;
+  #main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
   }
-  .form-signin .form-signin-heading,
-  .form-signin .checkbox {
-    margin-bottom: 10px;
+  
+  form {
+    background-color: rgba(60, 89, 107, 0.63);
+    width: 40%;
+    padding: 30px;
   }
-  .form-signin .checkbox {
-    font-weight: normal;
+  
+  .username input,
+  .password input {
+    width: 100%;
+    height: 40px;
+    border: 0px;
+    margin: 5px 5px 15px;
+    box-sizing: border-box;
+    padding: 15px 15px;
   }
-  .form-signin .form-control {
-    position: relative;
-    height: auto;
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
+  
+  input:focus,
+  button:focus {
+    outline: none;
+  }
+  
+  button {
+    background: #63cdda;
+    color: #fff;
+    border: 0px;
+    width: 100%;
     padding: 10px;
-    font-size: 16px;
+    margin: 5px;
+    font-size: 24px;
+    cursor: pointer;
   }
-  .form-signin .form-control:focus {
-    z-index: 2;
+  
+  .checkbox {
+    color: #fff;
+    padding-bottom: 10px;
   }
-  .form-signin input[type="email"] {
-    margin-bottom: -1px;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-  }
-  .form-signin input[type="password"] {
+  
+  h3 {
+    font-size: 24px;
+    text-align: center;
+    color: #fff;
+    text-transform: capitalize;
     margin-bottom: 10px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+  }
+  
+  p {
+    text-align: center;
+    color: #fff;
+    text-transform: capitalize;
+  }
+  
+  .social {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .social button {
+    display: flex;
+    width: 30px;
+    padding: 5px;
+    background-color: transparent;
+    justify-content: center;
+    text-transform: capitalize;
+  }
+  
+  .social button:nth-child(1) {
+    background-color: #3498db;
+  }
+  
+  .social button:nth-child(2) {
+    background-color: #e74c3c;
+  }
+  
+  .fa {
+    float: left;
+    font-size: 18px;
+  }
+  
+  a {
+    padding-left: 5px;
+    text-decoration: none;
+    color: #63cdda;
+    text-transform: capitalize;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  .label {
+    font-size: 40px;
+    text-align: center;
+    color: #fff;
+    padding-bottom: 15px;
+    text-transform: capitalize;
+  }
+  
+  @media(max-width:610px) {
+    form {
+      width: 60%;
+    }
+  
+    button {
+      padding: 5px;
+    }
+  }
+  
+  @media(max-width:420px) {
+    form {
+      width: 70%;
+    }
+  
+    h3 {
+      margin: 10px;
+    }
   }
   
