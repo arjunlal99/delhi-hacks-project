@@ -23,21 +23,21 @@ var requirementModel = conn.model('requirementModel', requirementSchema)
 //var myObj = new requirementModel({channelID:5,description:'Booty on Fire',fulfilled: '80%',createdBy:'OG',isSuggestion:true})
 function addObject(channelID,description,fulfilled,createdBy,isSuggestion){
     return new Promise((resolve, reject) =>{
-        var myObj = new requirementModel({channelID:5,description:'Booty on Fire',fulfilled: '80%',createdBy:'OG',isSuggestion:isSuggestion})
+        var myObj = new requirementModel({channelID:channelID,description:description,fulfilled: fulfilled,createdBy:createdBy,isSuggestion:isSuggestion})
         myObj.save(function(err,res){      
             if(err){
                 return reject(err)
             }
             else{
-                resolve(docs)
+                resolve(res)
             }
         })
     })
 }
 
-function getByRequirementID(id){
+function getByRequirementID(_id){
     return new Promise((resolve, reject) => {
-        requirementModel.find({_id:id}, (err, docs) => {
+        requirementModel.find({_id:_id}, (err, docs) => {
             if(err){
                 return reject(err)
             }else{
@@ -63,7 +63,7 @@ function getAllRequirements(){
 
 
 //retrieve requirememnts wrt channelID
-function getRequirememntsbyID(channelID){
+function getRequirementsbyID(channelID){
     return new Promise((resolve,reject) => {
         requirementModel.find({channelID:channelID},(err, docs) => {
             if (err){
@@ -85,6 +85,7 @@ function getRequirememntsbyID(channelID){
 module.exports = {
     addObject,
     getAllRequirements,
-    getAllRequirements,
+    getRequirementsbyID,
+    getByRequirementID
     
 }
