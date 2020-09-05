@@ -1,7 +1,7 @@
 var express = require('express')
 var app = express()
 app.set('view engine', 'pug')
-app.use(express.static(path.join(__dirname+"/public"))+"/public")
+app.use('/public',express.static(__dirname+"/public"))
 
 app.get('/', (req,res) => {
     res.render('homepage')
