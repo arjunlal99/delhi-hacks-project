@@ -1,15 +1,31 @@
-DOCTYPE html
-    html
-        head
-            title Channel
-
-        body
-            .top
-                h2#channel Channel Name
-                h2#admin Admin Name
-                p.desc
-                    "The description goes here"
-            .bottom
-                span.sub
-                    h4#req Requirement Name
-                    
+html
+    head
+        title Channel
+        link(rel="stylesheet" href="/public/style.css")
+    body
+        .outer
+            .main
+                .top
+                    .channel
+                        h3 Channel Name placeholder
+                    .desc
+                        p The description goes here
+                    .admin
+                        h3 Admin Name placeholder
+                .bottom
+                    - const req_name = ['Masks','Dresses','Food','Weed']
+                    - const perc_comp = [50,25,87,69]
+                    for n, i in req_name
+                        .sub
+                            .a
+                                h4#req= n
+                            .b
+                                h4#bar= perc_comp[i] + "%"
+                            .c
+                                button(type='button' class='but') Promise
+                    else
+                        .sub
+                            h4 No new requirements in this channel.
+            .suggest
+                a(href="/suggest") 
+                    button(type='button' class='but') Suggest requirement
