@@ -1,7 +1,7 @@
 var express = require('express')
 var app = express()
 app.set('view engine', 'pug')
-app.use(express.static(/home/anjaly/anjaly/desktop/delhihacks/delhi-hacks-project/frontend/views/public.join(__dirname, 'public')))
+app.use(express.static(home/anjaly/anjaly/desktop/delhihacks/delhi-hacks-project/frontend/views/public.join(__dirname, 'public')))
 
 app.get('/', (req,res) => {
     res.render('homepage')
