@@ -75,6 +75,16 @@ function getRequirementsbyID(channelID){
     })
 
 }
+/*
+function fulfillRequirement(_id){
+    return new Promise((resolve,reject) => {
+        requirementModel.findOneAndUpdate({_id : _id}, {})
+    })
+
+}
+
+
+*/
 /*getRequirememntsbyID(5).then((docs) =>{
     console.log(docs)
 }).catch((err)=>{
