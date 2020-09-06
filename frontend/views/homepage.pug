@@ -1,16 +1,17 @@
 doctype html
 html(lang="en")
   head
-    title Login Form In Pug
+    title Login 
     meta(charset='UTF-8')
     //meta(name='viewport', content='width=device-width, initial-scale=1.0')
     //link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap')
     //link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
     link(rel='stylesheet', href='/public/signincss.css')
   body
+    h1 EMERGENCY AID TRACKER
     #main
-     form(action="#")
-       div.label login form
+    form(action="#")
+       div.label login
        div.username
         input(type="text" id="inputEmail" class="form-control" placeholder="username" required autofocus)
        div.password
@@ -19,4 +20,17 @@ html(lang="en")
         input(type='checkbox' name='agreement' checked)
         |Remember me
        button(type="button") login
-       
+    #channel
+       h3 Channels
+       div.clink
+        p
+          a(href="#") Channel1 
+          br 
+          br
+          br
+          a(href="#") Channel2
+          br
+          br
+          br
+          a(href="#") Channel3
+    

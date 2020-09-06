@@ -1,25 +1,42 @@
-/* W3hubs.com - Download Free Responsive Website Layout Templates designed on HTML5 CSS3,Bootstrap,Tailwind CSS which are 100% Mobile friendly. w3Hubs all Layouts are responsive cross browser supported, best quality world class designs. */
-title{
-  color: blue;
-}
+
 body {
-    
-    padding: 0;
-    margin-left: 100px;
+    background-color: rgba(85, 85, 199, 0.808);
     font-family: 'Lato', sans-serif;
+  }
+  h1{
+    text-align: center;
+    font-size: 50px;
+    color: rgb(0, 0, 0);
+
+  }
+  h3{
+    font-size:40px;
+
+  }
+  #channel{
+    background-color: rgb(60, 89, 107,0.63);
+    width: 100%;
+    padding: 50px;
+    margin-top: 30px;
+    height: 100%;
+  }
+  .clink{
+    color: black
   }
   
   #main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    height: 20%;
+    margin: 20px;
   }
   
   form {
     background-color: rgba(60, 89, 107, 0.63);
-    width: 40%;
     padding: 30px;
+    display: block;
+    margin-left: 500px;
+    margin-right: 10px;
+    width: 20%;
+    height: 20%;
   }
   
   .username input,
@@ -39,7 +56,7 @@ body {
   
   button {
     background: #63cdda;
-    color: #fff;
+    color: #000;
     border: 0px;
     width: 100%;
     padding: 10px;
@@ -52,63 +69,19 @@ body {
     color: #fff;
     padding-bottom: 10px;
   }
-  
-  h3 {
-    font-size: 24px;
-    text-align: center;
-    color: #fff;
-    text-transform: capitalize;
-    margin-bottom: 10px;
-  }
-  
-  p {
-    text-align: center;
-    color: #fff;
-    text-transform: capitalize;
-  }
-  
-  .social {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .social button {
-    display: flex;
-    width: 30px;
-    padding: 5px;
-    background-color: transparent;
-    justify-content: center;
-    text-transform: capitalize;
-  }
-  
-  .social button:nth-child(1) {
-    background-color: #3498db;
-  }
-  
-  .social button:nth-child(2) {
-    background-color: #e74c3c;
-  }
-  
-  .fa {
-    float: left;
-    font-size: 18px;
-  }
-  
-  a {
-    padding-left: 5px;
-    text-decoration: none;
-    color: #63cdda;
-    text-transform: capitalize;
+  a{
+    color:black;
   }
   
   a:hover {
     text-decoration: underline;
+    color: red;
   }
   
   .label {
     font-size: 40px;
     text-align: center;
-    color: #fff;
+    color: #000;
     padding-bottom: 15px;
     text-transform: capitalize;
   }

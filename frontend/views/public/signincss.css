@@ -1,17 +1,19 @@
 /* W3hubs.com - Download Free Responsive Website Layout Templates designed on HTML5 CSS3,Bootstrap,Tailwind CSS which are 100% Mobile friendly. w3Hubs all Layouts are responsive cross browser supported, best quality world class designs. */
 title{
-  color:blue;
+  color:black;
+ 
 }
 body {
     
     padding: 0;
     margin-left: 100px;
     font-family: 'Lato', sans-serif;
+    background-color: rgba(41, 41, 99, 0.432);
   }
   
   #main {
     display: flex;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
     height: 100vh;
   }
