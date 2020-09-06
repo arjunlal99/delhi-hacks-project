@@ -7,15 +7,11 @@ var channel = require('./models/channel.js')
 
 //endpoint for getting array of all channels
 app.get('/api/channels', (req,res)=> {
-<<<<<<< HEAD
     channel.getChannels().then((docs) => {
         res.json({success: true, docs: docs})
     }).catch((err) => {
         res.json({success: false, message: err})
     })
-=======
-    
->>>>>>> fd90ca5da0e5011a0ec8d03fbf0cff2d55722e79
 
 })
 
@@ -30,44 +26,16 @@ app.get('/api/channels/:_id', (req,res) => {
 })
 
 //endpoint for requirements by channel id
-<<<<<<< HEAD
 app.get('/api/requirements/:channel_id', (req,res) => {
     
-=======
-app.get('/api/requirements/:channelID', (req,res) => {
-        requirement.getRequirementsbyID(req.params.channelID).then((docs) =>{
-            res.json({success: true,requirements: docs})
-        }).catch((err) =>{
-            res.json({success: false,message: err})
-        })
->>>>>>> fd90ca5da0e5011a0ec8d03fbf0cff2d55722e79
+
 
 })
 
-/*requirement.addObject('6',"Sample","90%","Befin",true).then((docs) =>{
-        console.log({success: true,requirements: docs})
-    }).catch((err) =>{
-        console.log({success: false,message: err})
-    })
-*/
 
-//test getAllRequirements
-app.get('/api/requirement/', (req,res) => {
-    requirement.getAllRequirements().then((docs) => {
-            res.json({success: true,requirement: docs })
-    }).catch((err) =>{
-        res.json({success: false,message: err})
-    })
-})
-
-
-//endpoint fo getting specific requirement by requirement id
+//endpoint fo getting specific requirement by id
 app.get('/api/requirement/:_id', (req,res) => {
-    requirement.getByRequirementID(req.params._id).then((docs) => {
-            res.json({success: true,requirement: docs })
-    }).catch((err) =>{
-        res.json({success: false,message: err})
-    })
+
 
 })
 
