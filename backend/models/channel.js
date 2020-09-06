@@ -24,20 +24,28 @@ var channelSchema = new Schema({
 var channelModel = conn.model('channels', channelSchema)
 
 function addChannel(name, description, admin, requirements){
-    var channel_instance = new channelModel({
-    name: name,
-    description: description,
-    admin: admin,
-    requirements: requirements
-    })
 
-    channel_instance.save((err,docs) => {
-        if (err){
-            console.log(err)
-        }else{
-            console.log(docs)
-        }
+    return new Promise((resolve,reject) => {
+
+        var channel_instance = new channelModel({
+            name: name,
+            description: description,
+            admin: admin,
+            requirements: requirements
+            })
+        
+            channel_instance.save((err,docs) => {
+                if (err){
+                    return reject(err)
+                }else{
+                    console.log(docs)
+                    resolve(docs)
+
+                }
+            })
+
     })
+    
 }
 
 
