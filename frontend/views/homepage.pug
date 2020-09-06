@@ -3,11 +3,12 @@ html(lang="en")
   head
     title Login 
     meta(charset='UTF-8')
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
     link(rel='stylesheet', href='/public/signincss.css')
   body
     h1 EMERGENCY AID TRACKER
-    #main
-    form(action="#")
+    #login
+     form(action="#")
        div.label login
        div.username
         input(type="text" id="inputEmail" class="form-control" placeholder="username" required autofocus)
@@ -16,18 +17,17 @@ html(lang="en")
        div.checkbox
         input(type='checkbox' name='agreement' checked)
         |Remember me
-       button(type="button") login
+       div .but
+        a(href='#') 
+          button(type="button") Login
+       //button(type="button") login
     #channel
        h3 Channels
        div.clink
         p
           a(href="#") Channel1 
-          br 
-          br
           br
           a(href="#") Channel2
-          br
-          br
           br
           a(href="#") Channel3
     

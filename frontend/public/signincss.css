@@ -1,6 +1,6 @@
 
 body {
-    background-color: rgba(85, 85, 199, 0.808);
+    background-color: rgba(157, 157, 241, 0.808);
     font-family: 'Lato', sans-serif;
   }
   h1{
@@ -15,28 +15,34 @@ body {
   }
   #channel{
     background-color: rgb(60, 89, 107,0.63);
-    width: 100%;
-    padding: 50px;
-    margin-top: 30px;
+    width: 40%;
+    padding: 20px 100px;
+    padding-right: 200px;
+    margin-top: 5px;
+    margin-left:20px;
     height: 100%;
+    padding-bottom: 200px;
+    display: inline block;
   }
   .clink{
     color: black
   }
-  
-  #main {
-    height: 20%;
-    margin: 20px;
+  p{
+    line-height: 3.0;
   }
   
-  form {
+  #login{
+    padding: 20px;
+
+  } 
+  form{
+    height: 20%;
+    float: right;
     background-color: rgba(60, 89, 107, 0.63);
     padding: 30px;
-    display: block;
-    margin-left: 500px;
-    margin-right: 10px;
+    display: inline block;
     width: 20%;
-    height: 20%;
+   
   }
   
   .username input,
@@ -54,7 +60,7 @@ body {
     outline: none;
   }
   
-  button {
+  .but {
     background: #63cdda;
     color: #000;
     border: 0px;
@@ -75,7 +81,7 @@ body {
   
   a:hover {
     text-decoration: underline;
-    color: red;
+    color:rgb(6, 6, 148);
   }
   
   .label {
