@@ -1,4 +1,32 @@
-DOCTYPE html
-html
-    head
-        title Homepage
+doctype html
+html(lang="en")
+  head
+    title Login 
+    meta(charset='UTF-8')
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel='stylesheet', href='/public/signincss.css')
+  body
+    h1 EMERGENCY AID TRACKER
+    #login
+     form(action="#" method="POST")
+       div.label login
+       div.username
+        input(type="text" id="inputEmail" class="form-control" placeholder="username" required autofocus)
+       div.password
+        input(type="password" id="password" class="form-control" placeholder="password" required)
+       div.checkbox
+        input(type='checkbox' name='agreement' checked)
+        |Remember me
+       div.but 
+        input(type="submit" value="Login" action="/api/user/login")
+        
+    #channel
+       h3 Channels
+       div.clink
+        p
+          a(href="#") Channel1 
+          br
+          a(href="#") Channel2
+          br
+          a(href="#") Channel3
+    
