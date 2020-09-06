@@ -14,7 +14,7 @@ var requirementSchema = new Schema({
     channelID: String,
     description: String,
     createdBy: String,
-    fulfilled: String,
+    fulfilled: Boolean,
     isSuggestion: Boolean
 
 })
@@ -34,7 +34,39 @@ function addObject(channelID,description,fulfilled,createdBy,isSuggestion){
         })
     })
 }
+/*
+addObject("5f54810d09ae174ed79f8c66","Manual Labour",false,"Arjun",false).then((docs) =>{
+    console.log(docs)
+}).catch((err)=>{
+    console.log(err)
+})
+addObject("5f54810d09ae174ed79f8c66","JCB",false,"Arjun",false).then((docs) =>{
+    console.log(docs)
+}).catch((err)=>{
+    console.log(err)
+})
+addObject("5f54810d09ae174ed79f8c66","Ambulance",false,"Arjun",false).then((docs) =>{
+    console.log(docs)
+}).catch((err)=>{
+    console.log(err)
+})
 
+addObject("5f54810d09ae174ed79f8c65","Water Bottles",false,"Arjun",false).then((docs) =>{
+    console.log(docs)
+}).catch((err)=>{
+    console.log(err)
+})
+addObject("5f54810d09ae174ed79f8c65","Blanket",false,"Arjun",false).then((docs) =>{
+    console.log(docs)
+}).catch((err)=>{
+    console.log(err)
+})
+addObject("5f54810d09ae174ed79f8c65","Biscuit",false,"Arjun",false).then((docs) =>{
+    console.log(docs)
+}).catch((err)=>{
+    console.log(err)
+})
+*/
 function getByRequirementID(_id){
     return new Promise((resolve, reject) => {
         requirementModel.find({_id:_id}, (err, docs) => {

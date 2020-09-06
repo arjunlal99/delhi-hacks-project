@@ -8,7 +8,7 @@ var conn = mongoose.createConnection(process.env.DB_URI,{useNewUrlParser: true ,
 conn.once('open', () => {
     console.log(' Channel Connection Created Successfully')
     //addChannel('emergency','this is just a description', 'Arjun', ['f2fs','2f2f'])
-   getChannels().then(docs => console.log(docs)).catch(err => console.log(err))
+   //getChannels().then(docs => console.log(docs)).catch(err => console.log(err))
 })
 
 
@@ -24,23 +24,38 @@ var channelSchema = new Schema({
 var channelModel = conn.model('channels', channelSchema)
 
 function addChannel(name, description, admin, requirements){
-    var channel_instance = new channelModel({
-    name: name,
-    description: description,
-    admin: admin,
-    requirements: requirements
-    })
+    return new Promise((resolve, reject) =>{    
+        var channel_instance = new channelModel({
+        name: name,
+        description: description,
+        admin: admin,
+        requirements: requirements
+        })
 
-    channel_instance.save((err,docs) => {
-        if (err){
-            console.log(err)
-        }else{
-            console.log(docs)
-        }
+        channel_instance.save((err,docs) => {
+            if (err){
+                return reject(err)
+            }else{
+                resolve(docs)
+            }
+        })
     })
 }
 
 
+/*addChannel("Flood Relief","Flood affected area at idukki","Befin",[]).then((docs) => {
+    console.log(docs)
+}).catch((err) =>{
+    console.log(err)
+})
+
+addChannel("Land Slide","Land Slide at Muthanga","Arjun",[]).then((docs) => {
+    console.log(docs)
+}).catch((err) =>{
+    console.log(err)
+})
+
+*/
 function getChannels(){
     return new Promise((resolve,reject) => {
         channelModel.find((err,docs) => {
