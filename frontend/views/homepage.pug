@@ -8,7 +8,7 @@ html(lang="en")
   body
     h1 EMERGENCY AID TRACKER
     #login
-     form(action="#")
+     form(action="#" method="POST")
        div.label login
        div.username
         input(type="text" id="inputEmail" class="form-control" placeholder="username" required autofocus)
@@ -18,9 +18,8 @@ html(lang="en")
         input(type='checkbox' name='agreement' checked)
         |Remember me
        div.but 
-        //button(type="button" onclick="href='#'") login
-        a(href='#') 
-          button(type="button") Login 
+        input(type="submit" value="Login" action="/api/user/login")
+        
     #channel
        h3 Channels
        div.clink
